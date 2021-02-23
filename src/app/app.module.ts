@@ -10,6 +10,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { GenderPipe } from './pipes/gender.pipe';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { GenderPipe } from './pipes/gender.pipe';
     TodoListComponent,
     UserComponent,
     UserDetailComponent,
-    GenderPipe
+    GenderPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { GenderPipe } from './pipes/gender.pipe';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: 'auth', useClass: AuthService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

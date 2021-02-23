@@ -1,0 +1,17 @@
+<div>
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <fieldset ngModelGroup="login">
+      <input #nameRef="ngModel" [(ngModel)]="name" name="name" type="text" required minlength="3">
+      <div *ngIf="nameRef.errors?.required">this is required</div>
+      <div *ngIf="nameRef.errors?.minlength">should be at least 3 charactors</div>
+      <div *ngIf="!nameRef.errors">Is valid</div>
+      
+      <input #passwordRef="ngModel" [(ngModel)]="password" name="password" type="text" required>
+      <div *ngIf="passwordRef.errors?.required">this is required</div>
+      <div *ngIf="!passwordRef.errors">Is valid</div>
+
+      <button (click)="login()">Login</button>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+</div>
