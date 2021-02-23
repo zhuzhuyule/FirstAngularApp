@@ -1,0 +1,10 @@
+
+<input type="text"  [(ngModel)]="text" />
+
+<button (click)="addTodo()">Add Item</button>
+
+<ul>
+  <li *ngFor="let todo of todoList" >
+    <span>{{ todo.id }}</span> {{ todo.name }} <span (click)="deleteTodo(todo.id)" >delete</span>
+  </li>
+</ul>
