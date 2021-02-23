@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { GenderPipe } from './pipes/gender.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     HeaderComponent,
     TodoListComponent,
     UserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
