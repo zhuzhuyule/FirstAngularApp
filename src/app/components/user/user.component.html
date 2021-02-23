@@ -1,0 +1,8 @@
+<div>
+  <h3>User List</h3>
+  <ul>
+      <li *ngFor="let user of users">
+          {{user.name}} {{user.gender ? '男' : '女'}} {{user.addr}}
+      </li>
+  </ul>
+</div>

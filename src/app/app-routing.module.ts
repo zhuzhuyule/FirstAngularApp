@@ -6,6 +6,7 @@ import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   {path: 'todo', component: TodoListComponent },
+  {path: 'user', component: UserComponent },
 ];
 
 @NgModule({
