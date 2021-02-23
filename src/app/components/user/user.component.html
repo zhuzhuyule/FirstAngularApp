@@ -1,8 +1,11 @@
 <div>
   <h3>User List</h3>
   <ul>
-      <li *ngFor="let user of users">
-          {{user.name}} {{user.gender ? '男' : '女'}} {{user.addr}}
-      </li>
+    <li *ngFor="let user of users">
+      <a routerLink="/detail/{{user.id}}">
+        {{user.name}} {{user.gender ? '男' : '女'}} {{user.addr}}
+      </a>
+    </li>
   </ul>
-</div>
+</div
+>

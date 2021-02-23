@@ -1,0 +1,14 @@
+<div>
+  <h3>用户详情</h3>
+  <div *ngIf="user">
+      <p>
+          {{user.name}}
+      </p>
+      <p>
+          {{user.gender ? '男' : '女'}}
+      </p>
+      <p>
+          {{user.addr}}
+      </p>
+  </div>
+</div>
