@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "f823b191-7799-438d-8d78-fcb1e468fc78",
+      "desc": "blablabla",
+      "completed": false
+    },
+    {
+      "id": "dd65a7c0-e24f-6c66-862e-0999ea504ca0",
+      "desc": "getting up",
+      "completed": false
+    },
+    {
+      "id": "41479267-a158-2871-9052-1a36a3c0dd5e",
+      "desc": "asd",
+      "completed": false
+    },
+    {
+      "id": "e30eb687-1594-78a8-0571-3a2fe0f76a41",
+      "desc": "asdfasdfasdf",
+      "completed": false
+    }
+  ]
+}

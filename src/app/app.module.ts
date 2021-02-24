@@ -12,7 +12,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { GenderPipe } from './pipes/gender.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
-
+import { TodoHeaderComponent } from './components/todo-list/todo-header/todo-header.component';
+import { TodoFooterComponent } from './components/todo-list/todo-footer/todo-footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,9 @@ import { AuthService } from './services/auth.service';
     UserComponent,
     UserDetailComponent,
     GenderPipe,
-    LoginComponent
+    LoginComponent,
+    TodoHeaderComponent,
+    TodoFooterComponent
   ],
   imports: [
     BrowserModule,
