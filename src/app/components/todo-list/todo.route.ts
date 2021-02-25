@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from '../user/services/auth-guard.service';
 import { TodoComponent } from './todo.component';
 
 
@@ -10,6 +11,7 @@ export const routes: Routes = [
   {
     path: 'todo/:filter',
     component: TodoComponent,
+    canActivate: [AuthGuardService],
   }
 ];
 

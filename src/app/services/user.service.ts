@@ -1,16 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User } from '../User';
-@Injectable({
-  providedIn: 'root'
-})
+
+import { User } from '../entities';
+
+@Injectable()
 export class UserService {
 
-  userUrl = 'https://www.fastmock.site/mock/c9f7dcffbe43fd41d21af0d75edca5ec/todo-list/user';
+  private api_url = 'http://localhost:3000/users';
+
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl);
+  findUser(username: string): Promise<User> {
+    const url = `${this.api_url}/?username=${username}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(res => {
+        let users = res as User[];
+        return (users.length > 0) ? users[0] : null;
+      })
+      .catch(this.handleError);
+  }
+  getUsers(): Promise<User[]> {
+    const url = `${this.api_url}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(res => res as User)
+      .catch(this.handleError);
+  }
+  
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 }

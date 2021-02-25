@@ -1,10 +1,9 @@
 input {
   display: block;
 }
-
-input.ng-invalid{
-  border: 3px solid red;
+.error {
+  color: red;
 }
-input.ng-valid{
-  border: 3px solid green;
+.error span {
+  font-size: 11px;
 }

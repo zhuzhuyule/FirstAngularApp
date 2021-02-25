@@ -1,4 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Auth } from 'src/app/entities';
 
 @Component({
   selector: 'app-login',
@@ -6,21 +8,27 @@ import { Component, Inject, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  name: string = '';
-  password: string = '';
-  constructor(@Inject('auth') private authService) { }
+
+  username = '';
+  password = '';
+  auth: Auth;
+
+  constructor(@Inject('auth') private service, private router: Router) { }
 
   ngOnInit() {
   }
 
-  login() {
-    this.authService.loginWithCredentials({ name: this.name, password: this.password });
-    this.name = '';
-    this.password = '';
-  }
-
   onSubmit(formValue) {
-    console.log(formValue);
+    this.service
+      .loginWithCredentials(formValue.login.username, formValue.login.password)
+      .then(auth => {
+        let redirectUrl = (auth.redirectUrl === null) ? '/' : auth.redirectUrl;
+        if (!auth.hasError) {
+          this.router.navigate([redirectUrl]);
+          localStorage.removeItem('redirectUrl');
+        } else {
+          this.auth = Object.assign({}, auth);
+        }
+      });
   }
-
 }

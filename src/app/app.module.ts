@@ -12,6 +12,8 @@ import { GenderPipe } from './pipes/gender.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { TodoModule } from './components/todo-list/todo.module';
+import { UserModule } from './components/user/user.module';
+import { UserService } from './services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +29,9 @@ import { TodoModule } from './components/todo-list/todo.module';
     HttpClientModule,
     AppRoutingModule,
     TodoModule,
+    UserModule,
   ],
-  providers: [{ provide: 'auth', useClass: AuthService }],
+  providers: [{ provide: 'auth', useClass: AuthService }, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

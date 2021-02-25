@@ -1,17 +1,22 @@
 <div>
   <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
     <fieldset ngModelGroup="login">
-      <input #nameRef="ngModel" [(ngModel)]="name" name="name" type="text" required minlength="3">
-      <div *ngIf="nameRef.errors?.required">this is required</div>
-      <div *ngIf="nameRef.errors?.minlength">should be at least 3 charactors</div>
-      <div *ngIf="!nameRef.errors">Is valid</div>
+      <label for="username" [class.error]="usernameRef.errors">
+        User Name:
+        <span *ngIf="usernameRef.errors?.required">this is required</span>
+        <span *ngIf="usernameRef.errors?.minlength">should be at least 3 charactors</span>
+      </label>
+      <input id="username" #usernameRef="ngModel" [(ngModel)]="username" name="username" type="text" required minlength="3">
       
-      <input #passwordRef="ngModel" [(ngModel)]="password" name="password" type="text" required>
-      <div *ngIf="passwordRef.errors?.required">this is required</div>
-      <div *ngIf="!passwordRef.errors">Is valid</div>
+      
+      <label for="password" [class.error]="passwordRef.errors">
+        Password:
+        <span *ngIf="passwordRef.errors?.required">this is required</span>
+      </label>
+      <input id="password" #passwordRef="ngModel" [(ngModel)]="password" name="password" type="text" required>
 
-      <button (click)="login()">Login</button>
       <button type="submit">Submit</button>
+      <div *ngIf="auth?.hasError" class="error">{{auth.errMsg}}</div>
     </fieldset>
   </form>
 </div>

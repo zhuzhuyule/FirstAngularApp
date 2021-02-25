@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let user of users">
       <a routerLink="/detail/{{user.id}}">
-        {{user.name}} {{user.gender | gender }} {{user.addr}}
+        {{user.username}}
       </a>
     </li>
   </ul>
