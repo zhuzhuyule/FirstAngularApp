@@ -25,12 +25,12 @@ export class TodoComponent implements OnInit {
       .then(todoList => this.todoList = [...todoList]);
   }
   clearCompleted() {
-    const todoList = this.todoList.filter(todo=> todo.completed===true);
-    todoList.forEach(todo => this.removeTodo(todo));
+    const completed_todoList = this.todoList.filter(todo=> todo.completed===true) || [];
+    Promise.all(completed_todoList.map(todo => this.removeTodo(todo)));
   }
   toggleAll(isSelectAll: boolean) {
-    const todoList = this.todoList.filter(todo=> todo.completed===isSelectAll);
-    todoList.forEach(todo => this.toggleTodo(todo));
+    const needToggleList = this.todoList.filter(todo=> todo.completed===isSelectAll);
+    Promise.all(needToggleList.map(todo => this.toggleTodo(todo)));
   }
 
   addTodo() {
