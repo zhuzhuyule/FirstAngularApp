@@ -1,12 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Todo } from '../../Todo';
+import { Todo } from './Todo';
 import { TodoService } from './todo.service';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
   providers: [TodoService],
-  
 })
 export class TodoListComponent implements OnInit {
   todoList: Todo[] = [];

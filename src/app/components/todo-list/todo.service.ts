@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 
-import { Todo } from '../../Todo';
+import { Todo } from './Todo';
 
 @Injectable()
 export class TodoService {

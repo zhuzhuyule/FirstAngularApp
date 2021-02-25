@@ -7,9 +7,9 @@ import { UserComponent } from './components/user/user.component';
 
 
 const routes: Routes = [
-  {path: '',redirectTo: 'todo',pathMatch: 'full'},
+  {path: '',redirectTo: 'login',pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
-  {path: 'todo', component: TodoListComponent },
+  {path: 'todo', redirectTo: 'todo' },
   {path: 'user', component: UserComponent },
   {path: 'detail/:id', component: UserDetailComponent },
 ];
