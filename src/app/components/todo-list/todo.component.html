@@ -9,5 +9,5 @@
     (onToggleTodo)="toggleTodo($event)"
     (onRemoveTodo)="removeTodo($event)"
   ></app-todo-list>
-  <app-todo-footer [itemCount]="todoList?.length" ></app-todo-footer>
+  <app-todo-footer [itemCount]="todoList?.length || 0" (onClearCompleted)="clearCompleted()" ></app-todo-footer>
 </section>

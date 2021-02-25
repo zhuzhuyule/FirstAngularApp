@@ -21,11 +21,15 @@ export class TodoComponent implements OnInit {
 
   filterTodoList(filter: string) {
     this.todoListervice
-    .filterTodoList(filter)
-    .then(todoList => this.todoList = [...todoList]);
+      .filterTodoList(filter)
+      .then(todoList => this.todoList = [...todoList]);
+  }
+  clearCompleted() {
+    const todoList = this.todoList.filter(todo=> todo.completed===true);
+    todoList.forEach(todo => this.removeTodo(todo));
   }
 
-  addTodo(){
+  addTodo() {
     this.todoListervice
       .addTodo(this.desc)
       .then(todo => {
@@ -43,20 +47,20 @@ export class TodoComponent implements OnInit {
       .toggleTodo(todo)
       .then(t => {
         this.todoList = [
-          ...this.todoList.slice(0,i),
+          ...this.todoList.slice(0, i),
           t,
-          ...this.todoList.slice(i+1)
-          ];
+          ...this.todoList.slice(i + 1)
+        ];
       });
   }
   removeTodo(todo: Todo) {
     const i = this.todoList.indexOf(todo);
     this.todoListervice
       .deleteTodoById(todo.id)
-      .then(()=> {
+      .then(() => {
         this.todoList = [
-          ...this.todoList.slice(0,i),
-          ...this.todoList.slice(i+1)
+          ...this.todoList.slice(0, i),
+          ...this.todoList.slice(i + 1)
         ];
       });
   }
