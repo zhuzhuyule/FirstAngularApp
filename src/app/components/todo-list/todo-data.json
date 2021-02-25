@@ -1,34 +1,14 @@
 {
   "todos": [
     {
-      "id": "f823b191-7799-438d-8d78-fcb1e468fc78",
-      "desc": "blablabla",
+      "id": "56260698-2709-841c-277c-112938eef47a",
+      "desc": "go to school",
       "completed": false
     },
     {
-      "id": "dd65a7c0-e24f-6c66-862e-0999ea504ca0",
-      "desc": "getting up",
-      "completed": false
-    },
-    {
-      "id": "41479267-a158-2871-9052-1a36a3c0dd5e",
-      "desc": "asd",
-      "completed": false
-    },
-    {
-      "id": "e30eb687-1594-78a8-0571-3a2fe0f76a41",
-      "desc": "asdfasdfasdf",
-      "completed": false
-    },
-    {
-      "id": "12b07f12-9ad2-a506-0b6c-0e3006b80a27",
-      "desc": "abcd",
-      "completed": false
-    },
-    {
-      "id": "3e68aa8a-1cc2-2d93-6be8-05e33db71b38",
-      "desc": "abcd",
-      "completed": false
+      "id": "673d6414-3c0f-0eb0-382f-cb0e0453cf77",
+      "desc": "get up",
+      "completed": true
     }
   ]
 }

@@ -1,0 +1,13 @@
+<section class="todoapp">
+  <app-todo-header 
+    placeholder="What do you want"
+    (onTextChanges)="textChanges($event)"
+    (onEnterUp)="addTodo()" >
+  </app-todo-header>  
+  <app-todo-list
+    [todoList]="todoList"
+    (onToggleTodo)="toggleTodo($event)"
+    (onRemoveTodo)="removeTodo($event)"
+  ></app-todo-list>
+  <app-todo-footer [itemCount]="todoList?.length" ></app-todo-footer>
+</section>

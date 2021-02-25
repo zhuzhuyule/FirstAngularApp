@@ -1,0 +1,13 @@
+<section class="main" *ngIf="todoList?.length > 0">
+  <input class="toggle-all" type="checkbox">
+  <ul class="todo-list">
+    <li *ngFor="let todo of todoList" [class.completed]="todo.completed">
+      <app-todo-item
+        [isChecked]="todo.completed"
+        [desc]="todo.desc"
+        (onRemoveTodo)="removeTodo(todo)"
+        (onToggleTodo)="toggleTodo(todo)"
+      ></app-todo-item>
+    </li>
+  </ul>
+</section>

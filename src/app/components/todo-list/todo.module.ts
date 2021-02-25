@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodoListComponent } from './todo-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { TodoHeaderComponent } from './todo-header/todo-header.component';
 import { TodoFooterComponent } from './todo-footer/todo-footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoComponent } from './todo.component';
 import { routing } from './todo.route';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +16,8 @@ import { FormsModule } from '@angular/forms';
     TodoListComponent,
     TodoHeaderComponent,
     TodoFooterComponent,
+    TodoItemComponent,
+    TodoComponent,
   ],
   imports: [
     CommonModule,
