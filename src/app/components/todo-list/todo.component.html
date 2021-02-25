@@ -8,6 +8,7 @@
     [todoList]="todoList"
     (onToggleTodo)="toggleTodo($event)"
     (onRemoveTodo)="removeTodo($event)"
+    (onToggleAll)="toggleAll($event)"
   ></app-todo-list>
   <app-todo-footer [itemCount]="todoList?.length || 0" (onClearCompleted)="clearCompleted()" ></app-todo-footer>
 </section>

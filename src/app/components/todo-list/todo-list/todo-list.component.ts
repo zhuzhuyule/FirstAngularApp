@@ -8,6 +8,7 @@ import { Todo } from '../Todo';
 })
 export class TodoListComponent implements OnInit {
   _todoList: Todo[] = [];
+  isSelectAll = false;
 
   @Input() 
   get todoList() {
@@ -15,10 +16,12 @@ export class TodoListComponent implements OnInit {
   }
   set todoList(list: Todo[]) {
     this._todoList = [...list];
+    this.isSelectAll = !list.some(item => !item.completed)
   }
 
   @Output() onRemoveTodo = new EventEmitter<Todo>();
   @Output() onToggleTodo = new EventEmitter<Todo>();
+  @Output() onToggleAll = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -31,5 +34,9 @@ export class TodoListComponent implements OnInit {
 
   toggleTodo(todo: Todo) {
     this.onToggleTodo.emit(todo);
+  }
+
+  toggleAll() {
+    this.onToggleAll.emit(this.isSelectAll)
   }
 }

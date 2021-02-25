@@ -28,6 +28,10 @@ export class TodoComponent implements OnInit {
     const todoList = this.todoList.filter(todo=> todo.completed===true);
     todoList.forEach(todo => this.removeTodo(todo));
   }
+  toggleAll(isSelectAll: boolean) {
+    const todoList = this.todoList.filter(todo=> todo.completed===isSelectAll);
+    todoList.forEach(todo => this.toggleTodo(todo));
+  }
 
   addTodo() {
     this.todoListervice
